@@ -1,5 +1,4 @@
 .godot/
-builds/
 *.import
 export_presets.cfg
 .env
