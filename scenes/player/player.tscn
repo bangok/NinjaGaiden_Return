@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://2j2w8byl8tmm"]
+
+[ext_resource type="Texture2D" uid="uid://b35pcmg3euvdb" path="res://assets/art/Ryu/fcjingling/zhanli/zhanli_000.png" id="1_8afob"]
+[ext_resource type="Script" uid="uid://bytfltjofdyat" path="res://scripts/state_machine/StateMachine.gd" id="2_gmlin"]
+[ext_resource type="Script" uid="uid://bf0jgkqi134gx" path="res://scripts/state_machine/player_states/Idle.gd" id="2_qek5x"]
+[ext_resource type="Script" uid="uid://btmikr8mnmi17" path="res://scripts/state_machine/player_states/Run.gd" id="3_5gtgg"]
+[ext_resource type="Script" uid="uid://guyomv28eall" path="res://scripts/state_machine/State.gd" id="3_lvxji"]
+[ext_resource type="Texture2D" uid="uid://bm36kikiec8uu" path="res://assets/art/Ryu/fcjingling/zhanli/zhanli_001.png" id="4_lvxji"]
+[ext_resource type="Texture2D" uid="uid://d3ccpedqr4a8m" path="res://assets/art/Ryu/fcjingling/paodong/paodong_000.png" id="5_0owmy"]
+[ext_resource type="Texture2D" uid="uid://c8cqqqbvxebyd" path="res://assets/art/Ryu/fcjingling/paodong/paodong_001.png" id="6_qek5x"]
+[ext_resource type="Texture2D" uid="uid://ccc6j67llok3v" path="res://assets/art/Ryu/fcjingling/paodong/paodong_002.png" id="7_5gtgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7p2l"]
+size = Vector2(14, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dovo2"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8afob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lvxji")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0owmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qek5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5gtgg")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1987142723]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=880567429]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=317069349]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_x7p2l")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1439335008]
+position_smoothing_enabled = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=93764409 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_gmlin")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1614676725]
+script = ExtResource("2_qek5x")
+metadata/_custom_type_script = "uid://guyomv28eall"
+
+[node name="Run" type="Node" parent="StateMachine" unique_id=1821516773]
+script = ExtResource("3_5gtgg")
+metadata/_custom_type_script = "uid://guyomv28eall"
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1219037872]
+script = ExtResource("3_lvxji")
+metadata/_custom_type_script = "uid://guyomv28eall"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=263881008]
+position = Vector2(14, 0)
+sprite_frames = SubResource("SpriteFrames_dovo2")
