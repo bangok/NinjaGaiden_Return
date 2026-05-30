@@ -15,13 +15,23 @@ var ninjutsu_pressed: bool = false
 var switch_ninjutsu_pressed: bool = false
 var special_move_pressed: bool = false
 
+var jump_buffer_time := 0.12
+
+var jump_buffer_timer := 0.0
+
 
 func update_input():
+	
 
 	move_direction = Input.get_axis(
 		"nav_left",
 		"nav_right"
 	)
+	
+	if Input.is_action_just_pressed("jump"):
+
+		jump_buffer_timer = jump_buffer_time
+		
 
 	up_pressed = Input.is_action_pressed(
 		"nav_up"
@@ -54,3 +64,19 @@ func update_input():
 	special_move_pressed = Input.is_action_just_pressed(
 		"special_move"
 	)
+	
+func update_buffer(delta):
+
+	if jump_buffer_timer > 0:
+
+		jump_buffer_timer -= delta
+		
+func consume_jump() -> bool:
+
+	if jump_buffer_timer > 0:
+
+		jump_buffer_timer = 0
+
+		return true
+
+	return false

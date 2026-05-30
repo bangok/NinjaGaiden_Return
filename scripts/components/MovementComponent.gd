@@ -10,8 +10,9 @@ func initialize(owner_player: Player) -> void:
 	player = owner_player
 
 
-func move(direction: float) -> void:
-	player.velocity.x = direction * player.data.walk_speed
+
+func move(direction):
+	player.velocity.x =direction * player.data.walk_speed
 
 
 
@@ -27,3 +28,6 @@ func apply_gravity(delta: float) -> void:
 
 	if not player.is_on_floor():
 		player.velocity.y +=player.data.gravity * delta
+		
+func is_falling() -> bool:
+	return player.velocity.y > 0

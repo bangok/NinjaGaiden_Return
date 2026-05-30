@@ -16,7 +16,6 @@ func initialize(initial_state: State) -> void:
 func change_state(new_state: State) -> void:
 
 	if current_state:
-
 		current_state.exit()
 
 	current_state = new_state
@@ -27,12 +26,10 @@ func change_state(new_state: State) -> void:
 func update(delta: float) -> void:
 
 	if current_state:
-
 		current_state.update(delta)
 
 
 func physics_update(delta: float) -> void:
 
 	if current_state:
-
 		current_state.physics_update(delta)

@@ -4,6 +4,7 @@ class_name State
 
 
 var player: Player
+
 var state_machine: StateMachine
 
 

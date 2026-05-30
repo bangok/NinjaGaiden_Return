@@ -6,16 +6,44 @@
 [ext_resource type="Texture2D" uid="uid://b35pcmg3euvdb" path="res://assets/sprites/Ryu/fcjingling/zhanli/zhanli_000.png" id="2_tpg5x"]
 [ext_resource type="Script" uid="uid://ddfcyhwrvybrn" path="res://scripts/components/MovementComponent.gd" id="3_4kuee"]
 [ext_resource type="Texture2D" uid="uid://bm36kikiec8uu" path="res://assets/sprites/Ryu/fcjingling/zhanli/zhanli_001.png" id="3_c3xxp"]
+[ext_resource type="Script" uid="uid://uwmfea4ebq1o" path="res://scripts/components/AnimationComponent.gd" id="5_180ig"]
+[ext_resource type="Script" uid="uid://bicqkfw1indlk" path="res://scripts/player/states/StateMachine.gd" id="7_5stf6"]
 [ext_resource type="Script" uid="uid://e4qsxfifoewa" path="res://scripts/player/states/IdleState.gd" id="7_npwbq"]
 [ext_resource type="Script" uid="uid://c0onc1k065k5y" path="res://scripts/player/states/RunState.gd" id="8_7oing"]
 [ext_resource type="Script" uid="uid://daep5nnwqrcff" path="res://scripts/player/states/JumpState.gd" id="9_5stf6"]
 [ext_resource type="Script" uid="uid://bdc4jhs6maefv" path="res://scripts/player/states/FallState.gd" id="10_180ig"]
+[ext_resource type="Texture2D" uid="uid://dxehlbewhehjv" path="res://assets/sprites/Ryu/fcjingling/kongfangun/kongfangun_000.png" id="13_2xrq6"]
+[ext_resource type="Texture2D" uid="uid://n6yt6x8dm2ku" path="res://assets/sprites/Ryu/fcjingling/kongfangun/kongfangun_001.png" id="14_pi3ps"]
+[ext_resource type="Texture2D" uid="uid://ndh0otll1y1p" path="res://assets/sprites/Ryu/fcjingling/kongfangun/kongfangun_002.png" id="15_kswpp"]
+[ext_resource type="Texture2D" uid="uid://cyqvp2o5tanjk" path="res://assets/sprites/Ryu/fcjingling/kongfangun/kongfangun_003.png" id="16_v5i4m"]
+[ext_resource type="Texture2D" uid="uid://c00yrql5dt7ib" path="res://assets/sprites/Ryu/fcjingling/xuankong/xuankong_000.png" id="17_p1lr0"]
+[ext_resource type="Texture2D" uid="uid://8a4jvajmne0q" path="res://assets/sprites/Ryu/fcjingling/xuankong/xuankong_001.png" id="18_ro0t8"]
+[ext_resource type="Texture2D" uid="uid://bki6kpcngfx36" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_000.png" id="19_v5i4m"]
+[ext_resource type="Texture2D" uid="uid://ch0lc3cxvm1y7" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_001.png" id="20_p1lr0"]
+[ext_resource type="Texture2D" uid="uid://cui3iilm5v174" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_002.png" id="21_ro0t8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_180ig"]
+size = Vector2(18, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5stf6"]
+size = Vector2(15, 31)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_npwbq"]
 animations = [{
 "frames": [],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_p1lr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ro0t8")
+}],
+"loop": true,
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -28,21 +56,48 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2xrq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pi3ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kswpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v5i4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_p1lr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ro0t8")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_v5i4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p1lr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ro0t8")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1811321606]
 script = ExtResource("1_gfjak")
 data = ExtResource("2_c3xxp")
-
-[node name="Visual" type="Node2D" parent="." unique_id=174212603]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=1073694674]
-sprite_frames = SubResource("SpriteFrames_npwbq")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.936271
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=1285631456]
 
 [node name="Components" type="Node" parent="." unique_id=1554109802]
 
@@ -53,10 +108,12 @@ script = ExtResource("1_wr5hl")
 script = ExtResource("3_4kuee")
 
 [node name="AnimationComponent" type="Node" parent="Components" unique_id=319662279]
+script = ExtResource("5_180ig")
 
 [node name="CombatComponent" type="Node" parent="Components" unique_id=134329477]
 
 [node name="StateMachine" type="Node" parent="." unique_id=700299431]
+script = ExtResource("7_5stf6")
 
 [node name="IdleState" type="Node" parent="StateMachine" unique_id=1099474039]
 script = ExtResource("7_npwbq")
@@ -73,5 +130,23 @@ script = ExtResource("10_180ig")
 [node name="HurtBox" type="Area2D" parent="." unique_id=1538209633]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=852436234]
+position = Vector2(16, -5)
+shape = SubResource("RectangleShape2D_180ig")
+debug_color = Color(0.70864254, 0.47640544, 0.28982675, 0.41960785)
 
 [node name="AttackRoot" type="Node2D" parent="." unique_id=1025911760]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550098258]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_5stf6")
+
+[node name="Visual" type="Node2D" parent="." unique_id=174212603]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=1073694674]
+sprite_frames = SubResource("SpriteFrames_npwbq")
+animation = &"run"
+autoplay = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=1285631456]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1949881614]

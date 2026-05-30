@@ -30,7 +30,7 @@ color = Color(0.04669073, 0, 0.13722081, 1)
 [node name="qiangbi" type="StaticBody2D" parent="." unique_id=926751080]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="qiangbi" unique_id=770926149]
-position = Vector2(287, 39)
+position = Vector2(294, 70)
 shape = SubResource("RectangleShape2D_jbqir")
 
 [node name="ColorRect" type="ColorRect" parent="qiangbi/CollisionShape2D" unique_id=470303904]
