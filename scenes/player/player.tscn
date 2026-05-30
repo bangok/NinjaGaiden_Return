@@ -3,33 +3,71 @@
 [ext_resource type="Script" uid="uid://chdk8g20101lh" path="res://scripts/player/Player.gd" id="1_gfjak"]
 [ext_resource type="Script" uid="uid://dgwlv73m7q21n" path="res://scripts/components/InputComponent.gd" id="1_wr5hl"]
 [ext_resource type="Resource" uid="uid://c062bsajfkqey" path="res://resources/player/PlayerData.tres" id="2_c3xxp"]
-[ext_resource type="Texture2D" uid="uid://b35pcmg3euvdb" path="res://assets/sprites/Ryu/fcjingling/zhanli/zhanli_000.png" id="2_tpg5x"]
+[ext_resource type="Texture2D" uid="uid://xyp8qlv4k6r7" path="res://assets/sprites/Ryu/fcjingling/zhanli/zhanli_000.png" id="2_tpg5x"]
 [ext_resource type="Script" uid="uid://ddfcyhwrvybrn" path="res://scripts/components/MovementComponent.gd" id="3_4kuee"]
-[ext_resource type="Texture2D" uid="uid://bm36kikiec8uu" path="res://assets/sprites/Ryu/fcjingling/zhanli/zhanli_001.png" id="3_c3xxp"]
+[ext_resource type="Texture2D" uid="uid://cdh7g16kk6ug2" path="res://assets/sprites/Ryu/fcjingling/zhanli/zhanli_001.png" id="3_c3xxp"]
 [ext_resource type="Script" uid="uid://uwmfea4ebq1o" path="res://scripts/components/AnimationComponent.gd" id="5_180ig"]
 [ext_resource type="Script" uid="uid://bicqkfw1indlk" path="res://scripts/player/states/StateMachine.gd" id="7_5stf6"]
 [ext_resource type="Script" uid="uid://e4qsxfifoewa" path="res://scripts/player/states/IdleState.gd" id="7_npwbq"]
 [ext_resource type="Script" uid="uid://c0onc1k065k5y" path="res://scripts/player/states/RunState.gd" id="8_7oing"]
 [ext_resource type="Script" uid="uid://daep5nnwqrcff" path="res://scripts/player/states/JumpState.gd" id="9_5stf6"]
 [ext_resource type="Script" uid="uid://bdc4jhs6maefv" path="res://scripts/player/states/FallState.gd" id="10_180ig"]
-[ext_resource type="Texture2D" uid="uid://dxehlbewhehjv" path="res://assets/sprites/Ryu/fcjingling/kongfangun/kongfangun_000.png" id="13_2xrq6"]
-[ext_resource type="Texture2D" uid="uid://n6yt6x8dm2ku" path="res://assets/sprites/Ryu/fcjingling/kongfangun/kongfangun_001.png" id="14_pi3ps"]
-[ext_resource type="Texture2D" uid="uid://ndh0otll1y1p" path="res://assets/sprites/Ryu/fcjingling/kongfangun/kongfangun_002.png" id="15_kswpp"]
-[ext_resource type="Texture2D" uid="uid://cyqvp2o5tanjk" path="res://assets/sprites/Ryu/fcjingling/kongfangun/kongfangun_003.png" id="16_v5i4m"]
-[ext_resource type="Texture2D" uid="uid://c00yrql5dt7ib" path="res://assets/sprites/Ryu/fcjingling/xuankong/xuankong_000.png" id="17_p1lr0"]
-[ext_resource type="Texture2D" uid="uid://8a4jvajmne0q" path="res://assets/sprites/Ryu/fcjingling/xuankong/xuankong_001.png" id="18_ro0t8"]
-[ext_resource type="Texture2D" uid="uid://bki6kpcngfx36" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_000.png" id="19_v5i4m"]
-[ext_resource type="Texture2D" uid="uid://ch0lc3cxvm1y7" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_001.png" id="20_p1lr0"]
-[ext_resource type="Texture2D" uid="uid://cui3iilm5v174" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_002.png" id="21_ro0t8"]
+[ext_resource type="Texture2D" uid="uid://mfc5epdvphh7" path="res://assets/sprites/Ryu/fcjingling/konggongji/konggongji_002.png" id="11_1hh02"]
+[ext_resource type="Script" uid="uid://lnuygjo54p5q" path="res://scripts/player/states/GroundAttackState.gd" id="11_5ttev"]
+[ext_resource type="Texture2D" uid="uid://dnprhdmkcfsx5" path="res://assets/sprites/Ryu/fcjingling/gongji/gongji_002.png" id="11_x3qp0"]
+[ext_resource type="Texture2D" uid="uid://cxetkrxvv0occ" path="res://assets/sprites/Ryu/fcjingling/konggongji/konggongji_003.png" id="12_5ttev"]
+[ext_resource type="Texture2D" uid="uid://byuwjqf1645xx" path="res://assets/sprites/Ryu/fcjingling/gongji/gongji_003.png" id="12_76i7i"]
+[ext_resource type="Script" uid="uid://365rvm55nof7" path="res://scripts/player/states/AirAttackState.gd" id="12_geaob"]
+[ext_resource type="Texture2D" uid="uid://dkuhyplmtk1a0" path="res://assets/sprites/Ryu/fcjingling/xuankong/xuankong_002.png.png" id="12_ro0t8"]
+[ext_resource type="Texture2D" uid="uid://bwkfpq06gqy26" path="res://assets/sprites/Ryu/fcjingling/konggongji/konggongji_004.png" id="13_geaob"]
+[ext_resource type="Texture2D" uid="uid://beig2cuynrf31" path="res://assets/sprites/Ryu/fcjingling/gongji/gongji_004.png" id="13_mndc6"]
+[ext_resource type="Texture2D" uid="uid://d2nj07tef4p44" path="res://assets/sprites/Ryu/fcjingling/shiheng/shiheng_002.png" id="13_p1lr0"]
+[ext_resource type="Texture2D" uid="uid://vhqfcrntrnqu" path="res://assets/sprites/Ryu/fcjingling/fangun/fangun_002.png" id="16_p1lr0"]
+[ext_resource type="Texture2D" uid="uid://cpv8rh51vo5gy" path="res://assets/sprites/Ryu/fcjingling/fangun/fangun_003.png" id="17_ro0t8"]
+[ext_resource type="Texture2D" uid="uid://cjpyily7lxk3" path="res://assets/sprites/Ryu/fcjingling/fangun/fangun_004.png" id="18_8nn5r"]
+[ext_resource type="Texture2D" uid="uid://v1q0b16j43jh" path="res://assets/sprites/Ryu/fcjingling/xuankong/xuankong_001.png" id="18_ro0t8"]
+[ext_resource type="Texture2D" uid="uid://bkp6rkait02so" path="res://assets/sprites/Ryu/fcjingling/fangun/fangun_005.png" id="19_kvwax"]
+[ext_resource type="Texture2D" uid="uid://33ffa1fowfra" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_003.png" id="21_p1lr0"]
+[ext_resource type="Texture2D" uid="uid://bydsxjyu1e4uc" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_002.png" id="21_ro0t8"]
+[ext_resource type="Texture2D" uid="uid://d1kfuauyd748v" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_004.png" id="22_ro0t8"]
+[ext_resource type="Script" uid="uid://bebkv78vdvd21" path="res://scripts/camera/PlayerCamera.gd" id="23_ro0t8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_180ig"]
-size = Vector2(18, 4)
+size = Vector2(12, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5stf6"]
-size = Vector2(15, 31)
+size = Vector2(14, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_npwbq"]
 animations = [{
+"frames": [{
+"duration": 0.25,
+"texture": ExtResource("11_1hh02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5ttev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_geaob")
+}],
+"loop": false,
+"name": &"air_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_x3qp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_76i7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mndc6")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
@@ -37,13 +75,21 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_p1lr0")
+"texture": ExtResource("18_ro0t8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_ro0t8")
+"texture": ExtResource("12_ro0t8")
 }],
 "loop": true,
 "name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_p1lr0")
+}],
+"loop": true,
+"name": &"fall_imbalance",
 "speed": 5.0
 }, {
 "frames": [{
@@ -59,36 +105,42 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_2xrq6")
+"texture": ExtResource("16_p1lr0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_pi3ps")
+"texture": ExtResource("17_ro0t8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_kswpp")
+"texture": ExtResource("18_8nn5r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_v5i4m")
+"texture": ExtResource("19_kvwax")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_p1lr0")
+"texture": ExtResource("16_p1lr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ro0t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8nn5r")
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_ro0t8")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("19_v5i4m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_p1lr0")
-}, {
-"duration": 1.0,
 "texture": ExtResource("21_ro0t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_p1lr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ro0t8")
 }],
 "loop": true,
 "name": &"run",
@@ -112,8 +164,9 @@ script = ExtResource("5_180ig")
 
 [node name="CombatComponent" type="Node" parent="Components" unique_id=134329477]
 
-[node name="StateMachine" type="Node" parent="." unique_id=700299431]
+[node name="StateMachine" type="Node" parent="." unique_id=700299431 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_5stf6")
+initial_state = NodePath("IdleState")
 
 [node name="IdleState" type="Node" parent="StateMachine" unique_id=1099474039]
 script = ExtResource("7_npwbq")
@@ -127,26 +180,36 @@ script = ExtResource("9_5stf6")
 [node name="FallState" type="Node" parent="StateMachine" unique_id=2003232550]
 script = ExtResource("10_180ig")
 
+[node name="GroundAttackState" type="Node" parent="StateMachine" unique_id=1667301626]
+script = ExtResource("11_5ttev")
+
+[node name="AirAttackState" type="Node" parent="StateMachine" unique_id=1794576689]
+script = ExtResource("12_geaob")
+
 [node name="HurtBox" type="Area2D" parent="." unique_id=1538209633]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=852436234]
-position = Vector2(16, -5)
+position = Vector2(-1, 5.5)
 shape = SubResource("RectangleShape2D_180ig")
-debug_color = Color(0.70864254, 0.47640544, 0.28982675, 0.41960785)
+debug_color = Color(0.88235295, 0.32156864, 0.22352941, 0.85882354)
 
 [node name="AttackRoot" type="Node2D" parent="." unique_id=1025911760]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550098258]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-1, 7)
 shape = SubResource("RectangleShape2D_5stf6")
 
 [node name="Visual" type="Node2D" parent="." unique_id=174212603]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=1073694674]
 sprite_frames = SubResource("SpriteFrames_npwbq")
-animation = &"run"
+animation = &"air_attack"
 autoplay = "idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=1285631456]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1949881614]
+position = Vector2(9, 91)
+position_smoothing_speed = 0.0
+rotation_smoothing_speed = 0.0
+script = ExtResource("23_ro0t8")

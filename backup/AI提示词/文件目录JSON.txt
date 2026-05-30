@@ -1,0 +1,146 @@
+{
+  "project_root": "res://",
+  "folders": [
+    {
+      "name": "assets",
+      "type": "folder",
+      "children": []
+    },
+    {
+      "name": "autoload",
+      "type": "folder",
+      "children": []
+    },
+    {
+      "name": "backup",
+      "type": "folder",
+      "children": []
+    },
+    {
+      "name": "resources",
+      "type": "folder",
+      "children": [
+        {
+          "name": "player",
+          "type": "folder",
+          "children": [
+            {
+              "name": "PlayerData.gd",
+              "type": "script"
+            },
+            {
+              "name": "PlayerData.tres",
+              "type": "resource"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scenes",
+      "type": "folder",
+      "children": [
+        {
+          "name": "levels",
+          "type": "folder",
+          "children": [
+            {
+              "name": "test_level.tscn",
+              "type": "scene"
+            }
+          ]
+        },
+        {
+          "name": "player",
+          "type": "folder",
+          "children": [
+            {
+              "name": "Player.tscn",
+              "type": "scene"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "folder",
+      "children": [
+        {
+          "name": "components",
+          "type": "folder",
+          "children": [
+            {
+              "name": "AnimationComponent.gd",
+              "type": "script"
+            },
+            {
+              "name": "InputComponent.gd",
+              "type": "script"
+            },
+            {
+              "name": "MovementComponent.gd",
+              "type": "script"
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "type": "folder",
+          "children": []
+        },
+        {
+          "name": "player",
+          "type": "folder",
+          "children": [
+            {
+              "name": "states",
+              "type": "folder",
+              "children": [
+                {
+                  "name": "FallState.gd",
+                  "type": "script"
+                },
+                {
+                  "name": "IdleState.gd",
+                  "type": "script"
+                },
+                {
+                  "name": "JumpState.gd",
+                  "type": "script"
+                },
+                {
+                  "name": "RunState.gd",
+                  "type": "script"
+                },
+                {
+                  "name": "State.gd",
+                  "type": "script"
+                },
+                {
+                  "name": "StateMachine.gd",
+                  "type": "script"
+                }
+              ]
+            },
+            {
+              "name": "Player.gd",
+              "type": "script"
+            },
+            {
+              "name": "state_machine",
+              "type": "folder",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "root_files": [
+    {
+      "name": "icon.svg",
+      "type": "image"
+    }
+  ]
+}

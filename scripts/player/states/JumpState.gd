@@ -1,32 +1,41 @@
+# res://scripts/player/states/JumpState.gd
 extends State
 
 class_name JumpState
 
-
-
-func enter() -> void:
-
+func enter(_msg: Dictionary = {}) -> void:
 	player.animation.play("jump")
 	player.movement.jump()
-	print("进入 Jump")
-
 
 func update(_delta: float) -> void:
+	# 触发空中攻击
+	if Input.is_action_just_pressed("attack"):
+		var move_dir = player.input.move_direction
+		var air_imbalance = false
+		# 【预空判】如果在触发攻击的瞬间按着反方向，直接以失衡状态切入攻击
+		if move_dir != 0 and move_dir != player.facing_direction:
+			air_imbalance = true
+			
+		state_machine.change_state(state_machine.get_node("AirAttackState"), {"imbalance": air_imbalance})
+		return
 
 	if player.movement.is_falling():
-
-		state_machine.change_state(
-			player.fall_state
-		)
-
+		state_machine.change_state(player.fall_state, {"imbalance": false})
+		return
 
 func physics_update(_delta: float) -> void:
+	var move_dir = player.input.move_direction
 
-	player.movement.move(
-		player.input.move_direction
-	)
-
-
-func exit() -> void:
-
-	print("离开 Jump")
+	# 【核心铁律】取消所有转身代码
+	if move_dir != 0:
+		if move_dir != player.facing_direction:
+			player.velocity.x = move_dir * player.data.walk_speed * player.data.imbalance_speed_factor
+			state_machine.change_state(player.fall_state, {"imbalance": true})
+			player.move_and_slide()
+			return
+		else:
+			player.movement.move(move_dir)
+	else:
+		player.movement.stop()
+		
+	player.move_and_slide()
