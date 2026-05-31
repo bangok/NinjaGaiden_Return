@@ -18,15 +18,32 @@ func physics_update(_delta: float) -> void:
 		state_machine.change_state(state_machine.get_node("GroundNinjutsuState"))
 		return
 	
-	# 触发地面攻击 (修正了获取状态节点的路径)
+	# 触发地面攻击
 	if Input.is_action_just_pressed("attack"):
 		state_machine.change_state(state_machine.get_node("GroundAttackState"))
 		return
 		
-	# 【核心修复：踩空坠落判定】
+	# 踩空坠落判定
 	if not player.is_on_floor():
 		state_machine.change_state(player.fall_state, {"imbalance": true})
 		return
+		
+	# 【防误触兼容：极限帧同时按下方向键和跳跃键时下穿】
+	if Input.is_action_pressed("nav_down") and Input.is_action_just_pressed("jump"):
+		var can_drop = false
+		for i in player.get_slide_collision_count():
+			var collision = player.get_slide_collision(i)
+			if collision:
+				var collider = collision.get_collider()
+				if collider and collider.is_in_group("hanging_platform"):
+					can_drop = true
+					break
+				
+		if can_drop:
+			player.global_position.y += 2.0
+			state_machine.change_state(player.fall_state, {"imbalance": false})
+			player.input.consume_jump()
+			return
 		
 	# 触发下蹲 (奔跑时按 S 瞬间急停下蹲)
 	if Input.is_action_pressed("nav_down"):

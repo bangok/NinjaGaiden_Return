@@ -34,9 +34,12 @@
 [ext_resource type="Script" uid="uid://cbb32kxj33vxe" path="res://scripts/player/states/SwordDashState.gd" id="18_ln3h3"]
 [ext_resource type="Texture2D" uid="uid://v1q0b16j43jh" path="res://assets/sprites/Ryu/fcjingling/xuankong/xuankong_001.png" id="18_ro0t8"]
 [ext_resource type="Texture2D" uid="uid://fk3whd58ldas" path="res://assets/sprites/Ryu/fcjingling/xiadun/xiadun_002.png" id="19_5mf0n"]
+[ext_resource type="Script" uid="uid://bhuo8ldxhft7d" path="res://scripts/player/states/WallState.gd" id="19_hdvrm"]
 [ext_resource type="Texture2D" uid="uid://bkp6rkait02so" path="res://assets/sprites/Ryu/fcjingling/fangun/fangun_005.png" id="19_kvwax"]
 [ext_resource type="Texture2D" uid="uid://y22glbi6npis" path="res://assets/sprites/Ryu/fcjingling/kongrenshu/kongrenshu_004.png" id="19_vo27k"]
 [ext_resource type="Texture2D" uid="uid://br7qlm4e54vfj" path="res://assets/sprites/Ryu/fcjingling/xiadun/xiadun_003.png" id="20_4hvnv"]
+[ext_resource type="Script" uid="uid://crun66h67bfpw" path="res://scripts/player/states/PlatformDropState.gd" id="20_lclul"]
+[ext_resource type="Script" uid="uid://bpk2tpphphl6a" path="res://scripts/player/states/HangState.gd" id="21_ej2d6"]
 [ext_resource type="Texture2D" uid="uid://i3emub21lh3m" path="res://assets/sprites/Ryu/fcjingling/xiadungongji/xiadungongji_003.png" id="21_kxw46"]
 [ext_resource type="Texture2D" uid="uid://33ffa1fowfra" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_003.png" id="21_p1lr0"]
 [ext_resource type="Texture2D" uid="uid://bydsxjyu1e4uc" path="res://assets/sprites/Ryu/fcjingling/paodong/paodong_002.png" id="21_ro0t8"]
@@ -46,6 +49,12 @@
 [ext_resource type="Script" uid="uid://bebkv78vdvd21" path="res://scripts/camera/PlayerCamera.gd" id="23_ro0t8"]
 [ext_resource type="Texture2D" uid="uid://biemve1cpov1f" path="res://assets/sprites/Ryu/fcjingling/renshu/renshu_003.png" id="31_genst"]
 [ext_resource type="Texture2D" uid="uid://byr771p1frsq6" path="res://assets/sprites/Ryu/fcjingling/renshu/renshu_004.png" id="32_niom3"]
+[ext_resource type="Texture2D" uid="uid://c8xnchcrryhri" path="res://assets/sprites/Ryu/fcjingling/xuandiao/xuandiao_004.png" id="38_gmu8b"]
+[ext_resource type="Texture2D" uid="uid://lsb4eiwh1lqp" path="res://assets/sprites/Ryu/fcjingling/xuanyidong/xuandiao_005.png" id="39_pwfqx"]
+[ext_resource type="Texture2D" uid="uid://cuvp201nxr5bv" path="res://assets/sprites/Ryu/fcjingling/xuanyidong/xuandiao_006.png" id="40_kssj8"]
+[ext_resource type="Texture2D" uid="uid://cg35nawxuvama" path="res://assets/sprites/Ryu/fcjingling/xuanyidong/xuandiao_007.png" id="41_8lfxt"]
+[ext_resource type="Texture2D" uid="uid://5gytwaqqi7lg" path="res://assets/sprites/Ryu/fcjingling/xuanrenshu/xuandiao_008.png" id="42_8lfxt"]
+[ext_resource type="Texture2D" uid="uid://bc2ry5stq76pl" path="res://assets/sprites/Ryu/fcjingling/xuanrenshu/xuandiao_009.png" id="43_lclul"]
 [ext_resource type="Texture2D" uid="uid://cimwmh6sx4aqw" path="res://assets/sprites/Ryu/tpjingling/qianchong/qianchong_003.png" id="44_0ncpa"]
 [ext_resource type="Texture2D" uid="uid://bbc27w5k70gpr" path="res://assets/sprites/Ryu/tpjingling/beizhan/beizhan.png" id="44_rw8a5"]
 [ext_resource type="Texture2D" uid="uid://b30ldriejrbrd" path="res://assets/sprites/Ryu/tpjingling/qianchong/qianchong_004.png" id="45_upxxc"]
@@ -56,6 +65,12 @@
 [ext_resource type="Texture2D" uid="uid://drmn71juut602" path="res://assets/sprites/Ryu/tpjingling/qianchong/qianchong_009.png" id="50_hdvrm"]
 [ext_resource type="Texture2D" uid="uid://c6u23hpkbpw28" path="res://assets/sprites/Ryu/tpjingling/qianchong/qianchong_010.png" id="51_5xbmr"]
 [ext_resource type="Texture2D" uid="uid://83p1ek6iykrg" path="res://assets/sprites/Ryu/tpjingling/qianchong/qianchong_011.png" id="52_hir57"]
+[ext_resource type="Texture2D" uid="uid://dqur54a73cjy2" path="res://assets/sprites/Ryu/fcjingling/paqiang/qiangmian_003.png" id="57_hdvrm"]
+[ext_resource type="Texture2D" uid="uid://nf7u5mix72c" path="res://assets/sprites/Ryu/fcjingling/paqiang/qiangmian_004.png" id="58_7072n"]
+[ext_resource type="Texture2D" uid="uid://bdmieei86moql" path="res://assets/sprites/Ryu/fcjingling/qiangrenshu/qiangmian_005.png" id="58_hdvrm"]
+[ext_resource type="Texture2D" uid="uid://boddtmlcylvxk" path="res://assets/sprites/Ryu/fcjingling/qiangrenshu/qiangmian_006.png" id="59_5xbmr"]
+[ext_resource type="Texture2D" uid="uid://qg1ms4d8x4m" path="res://assets/sprites/Ryu/fcjingling/qiangrenshu2/qiangmian_007.png" id="60_hir57"]
+[ext_resource type="Texture2D" uid="uid://bkeswjbq3neej" path="res://assets/sprites/Ryu/fcjingling/qiangrenshu2/qiangmian_008.png" id="61_7072n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_180ig"]
 size = Vector2(12, 21)
@@ -166,6 +181,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("38_gmu8b")
+}],
+"loop": true,
+"name": &"hang_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_pwfqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_kssj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_8lfxt")
+}],
+"loop": true,
+"name": &"hang_move",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_8lfxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_lclul")
+}],
+"loop": false,
+"name": &"hang_ninjutsu",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_tpg5x")
 }, {
 "duration": 1.0,
@@ -216,7 +264,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -248,7 +296,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"sword_dash",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -257,9 +305,51 @@ animations = [{
 "loop": true,
 "name": &"sword_ready",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_hdvrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_7072n")
+}],
+"loop": true,
+"name": &"wall_climb",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_hdvrm")
+}],
+"loop": true,
+"name": &"wall_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_hdvrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_5xbmr")
+}],
+"loop": false,
+"name": &"wall_ninjutsu",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_hir57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_7072n")
+}],
+"loop": false,
+"name": &"wall_ninjutsu_backward",
+"speed": 7.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1811321606]
+z_index = 5
 script = ExtResource("1_gfjak")
 data = ExtResource("2_c3xxp")
 
@@ -316,6 +406,15 @@ script = ExtResource("17_upxxc")
 [node name="SwordDashState" type="Node" parent="StateMachine" unique_id=1051548288]
 script = ExtResource("18_ln3h3")
 
+[node name="WallState" type="Node" parent="StateMachine" unique_id=1276481399]
+script = ExtResource("19_hdvrm")
+
+[node name="PlatformDropState" type="Node" parent="StateMachine" unique_id=647172989]
+script = ExtResource("20_lclul")
+
+[node name="HangState" type="Node" parent="StateMachine" unique_id=1692244118]
+script = ExtResource("21_ej2d6")
+
 [node name="HurtBox" type="Area2D" parent="." unique_id=1538209633]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=852436234]
@@ -333,10 +432,8 @@ shape = SubResource("RectangleShape2D_5stf6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=1073694674]
 sprite_frames = SubResource("SpriteFrames_npwbq")
-animation = &"sword_dash"
+animation = &"fall"
 autoplay = "idle"
-frame = 8
-frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=1285631456]
 
@@ -345,3 +442,6 @@ position = Vector2(9, 91)
 position_smoothing_speed = 0.0
 rotation_smoothing_speed = 0.0
 script = ExtResource("23_ro0t8")
+
+[node name="HeadSensor" type="RayCast2D" parent="." unique_id=967590739]
+target_position = Vector2(0, -32)

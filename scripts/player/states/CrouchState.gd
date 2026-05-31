@@ -4,42 +4,40 @@ extends State
 class_name CrouchState
 
 func enter(_msg: Dictionary = {}) -> void:
-	# 瞬间停止移动，并播放下蹲动画
-	player.movement.stop()
-	player.animation.play("crouch")
-	
-	# TODO: 未来在这里添加缩小 HurtBox (受击框) 的逻辑
+	player.animation.play("crouch") 
+	player.velocity.x = 0 
 
 func physics_update(_delta: float) -> void:
-	
-	# 触发地面忍术
-	if Input.is_action_just_pressed("ninjutsu"):
-		state_machine.change_state(state_machine.get_node("GroundNinjutsuState"))
+	# 1. 如果松开下方向键，站起来恢复待机状态
+	if not Input.is_action_pressed("nav_down"):
+		state_machine.change_state(player.idle_state)
 		return
-	
-	# 1. 触发下蹲攻击
+
+	# 2. 下蹲时发动下蹲攻击
 	if Input.is_action_just_pressed("attack"):
 		state_machine.change_state(state_machine.get_node("CrouchAttackState"))
 		return
+		
+	# 3. 下蹲时释放忍术
+	if Input.is_action_just_pressed("ninjutsu"):
+		state_machine.change_state(state_machine.get_node("GroundNinjutsuState"))
+		return
 
-	# 2. 边缘防错：如果在平台边缘滑落，直接切入失衡下落
-	if not player.is_on_floor():
-		state_machine.change_state(player.fall_state, {"imbalance": true})
-		return
+	# 4. 【下穿触发】：下蹲时按下跳跃键
+	if Input.is_action_just_pressed("jump"):
+		# 进行不发生实际位移的虚拟碰撞射线探测
+		var test_collision = player.move_and_collide(Vector2(0, 2), true)
+		if test_collision:
+			var collider = test_collision.get_collider()
+			# 如果脚踩的是单向吊台，果断切入专属的“下蹲穿透状态”
+			if collider and collider.is_in_group("hanging_platform"):
+				state_machine.change_state(state_machine.get_node("PlatformDropState"))
+				player.input.consume_jump()
+				return
 		
-	# 3. 核心机制：松开下蹲键，恢复站立或奔跑
-	if not Input.is_action_pressed("nav_down"):
-		if player.input.move_direction != 0:
-			state_machine.change_state(player.run_state)
-		else:
-			state_machine.change_state(player.idle_state)
+		# 如果脚下不是吊台而是普通实心平地，允许正常向上原地跳跃
+		state_machine.change_state(player.jump_state)
+		player.input.consume_jump()
 		return
-		
-	# 保持锁死 X 轴
-	player.movement.stop()
+
 	player.move_and_slide()
-
-# 当离开下蹲状态时（无论是站起还是起跳）
-func exit() -> void:
-	# TODO: 未来在这里添加恢复 HurtBox (受击框) 默认高度的逻辑
-	pass

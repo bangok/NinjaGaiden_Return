@@ -1,156 +1,46 @@
 [gd_scene format=3 uid="uid://dorelmhjp0sqy"]
 
-[ext_resource type="PackedScene" uid="uid://2j2w8byl8tmm" path="res://scenes/player/Player.tscn" id="1_jbqir"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hp5k"]
-size = Vector2(3274.5, 71)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbqir"]
-size = Vector2(10, 146)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yautc"]
-size = Vector2(86, 4)
+[ext_resource type="PackedScene" uid="uid://2j2w8byl8tmm" path="res://scenes/player/player.tscn" id="1_jbqir"]
+[ext_resource type="PackedScene" uid="uid://df5u4t1mug0nb" path="res://scenes/module‌/qiangbi.tscn" id="2_v45ci"]
+[ext_resource type="PackedScene" uid="uid://dc2lxhfdtb3f4" path="res://scenes/module‌/dimian.tscn" id="2_yautc"]
+[ext_resource type="PackedScene" uid="uid://m1mcny5xwvus" path="res://scenes/module‌/hanging_platform.tscn" id="3_48ne7"]
 
 [node name="TestLevel" type="Node2D" unique_id=1542865607]
 
-[node name="dimian" type="StaticBody2D" parent="." unique_id=1875531678]
-position = Vector2(10, 14)
+[node name="ceshi" type="Node" parent="." unique_id=1445180905]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dimian" unique_id=1502975225]
-position = Vector2(1675, 188)
-shape = SubResource("RectangleShape2D_3hp5k")
+[node name="dimian" parent="ceshi" unique_id=223908678 instance=ExtResource("2_yautc")]
+position = Vector2(932, 266)
 
-[node name="ColorRect" type="ColorRect" parent="dimian/CollisionShape2D" unique_id=1216936377]
-offset_left = -1637.0
-offset_top = -35.0
-offset_right = 1636.0
-offset_bottom = 43.0
-color = Color(0.04669073, 0, 0.13722081, 1)
+[node name="qiangbi" parent="ceshi" unique_id=1004225553 instance=ExtResource("2_v45ci")]
+position = Vector2(18, 83)
 
-[node name="qiangbi" type="StaticBody2D" parent="." unique_id=926751080]
+[node name="HangingPlatform" parent="ceshi/qiangbi" unique_id=894400689 instance=ExtResource("3_48ne7")]
+position = Vector2(216, 5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="qiangbi" unique_id=770926149]
-position = Vector2(293, 19)
-shape = SubResource("RectangleShape2D_jbqir")
+[node name="HangingPlatform2" parent="ceshi/qiangbi" unique_id=1863337870 instance=ExtResource("3_48ne7")]
+position = Vector2(336, 28)
 
-[node name="ColorRect" type="ColorRect" parent="qiangbi/CollisionShape2D" unique_id=470303904]
-offset_left = -5.0
-offset_top = -73.0
-offset_right = 5.0
-offset_bottom = 73.0
-color = Color(0.34117648, 0.32156864, 0.85882354, 1)
+[node name="qiangbi" parent="ceshi/qiangbi/HangingPlatform2" unique_id=370270516 instance=ExtResource("2_v45ci")]
+position = Vector2(89, -94)
 
-[node name="qiangbi2" type="StaticBody2D" parent="." unique_id=1623895924]
-position = Vector2(-272, 10)
+[node name="qiangbi" parent="ceshi/qiangbi/HangingPlatform2/qiangbi" unique_id=129907839 instance=ExtResource("2_v45ci")]
+position = Vector2(55, 108)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="qiangbi2" unique_id=1359321776]
-position = Vector2(293, 19)
-shape = SubResource("RectangleShape2D_jbqir")
+[node name="HangingPlatform" parent="ceshi/qiangbi/HangingPlatform2/qiangbi/qiangbi" unique_id=1749425107 instance=ExtResource("3_48ne7")]
+position = Vector2(44, -72)
 
-[node name="ColorRect" type="ColorRect" parent="qiangbi2/CollisionShape2D" unique_id=118175278]
-offset_left = -5.0
-offset_top = -73.0
-offset_right = 5.0
-offset_bottom = 73.0
-color = Color(0.34117648, 0.32156864, 0.85882354, 1)
+[node name="HangingPlatform2" parent="ceshi/qiangbi/HangingPlatform2/qiangbi/qiangbi" unique_id=217496373 instance=ExtResource("3_48ne7")]
+position = Vector2(142, -72)
 
-[node name="guatai" type="StaticBody2D" parent="." unique_id=599176177]
-position = Vector2(14, 19)
+[node name="HangingPlatform3" parent="ceshi/qiangbi/HangingPlatform2/qiangbi/qiangbi" unique_id=1227376754 instance=ExtResource("3_48ne7")]
+position = Vector2(244, -23)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guatai" unique_id=1352374843]
-position = Vector2(58, 104)
-shape = SubResource("RectangleShape2D_yautc")
+[node name="HangingPlatform4" parent="ceshi/qiangbi/HangingPlatform2/qiangbi/qiangbi" unique_id=1110078297 instance=ExtResource("3_48ne7")]
+position = Vector2(368, 8)
 
-[node name="ColorRect" type="ColorRect" parent="guatai/CollisionShape2D" unique_id=1434710792]
-offset_left = -43.0
-offset_top = -2.0
-offset_right = 43.0
-offset_bottom = 2.0
-color = Color(0.34509805, 0.2509804, 0.2, 1)
-
-[node name="guatai2" type="StaticBody2D" parent="." unique_id=1100106081]
-position = Vector2(370, 20)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guatai2" unique_id=1345353020]
-position = Vector2(58, 104)
-shape = SubResource("RectangleShape2D_yautc")
-
-[node name="ColorRect" type="ColorRect" parent="guatai2/CollisionShape2D" unique_id=547654428]
-offset_left = -43.0
-offset_top = -2.0
-offset_right = 43.0
-offset_bottom = 2.0
-color = Color(0.34509805, 0.2509804, 0.2, 1)
-
-[node name="guatai3" type="StaticBody2D" parent="." unique_id=754966504]
-position = Vector2(481, -19)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guatai3" unique_id=1030023042]
-position = Vector2(58, 104)
-shape = SubResource("RectangleShape2D_yautc")
-
-[node name="ColorRect" type="ColorRect" parent="guatai3/CollisionShape2D" unique_id=1296395266]
-offset_left = -43.0
-offset_top = -2.0
-offset_right = 43.0
-offset_bottom = 2.0
-color = Color(0.34509805, 0.2509804, 0.2, 1)
-
-[node name="guatai4" type="StaticBody2D" parent="." unique_id=1138149611]
-position = Vector2(595, 20)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guatai4" unique_id=337562920]
-position = Vector2(58, 104)
-shape = SubResource("RectangleShape2D_yautc")
-
-[node name="ColorRect" type="ColorRect" parent="guatai4/CollisionShape2D" unique_id=1268270803]
-offset_left = -43.0
-offset_top = -2.0
-offset_right = 43.0
-offset_bottom = 2.0
-color = Color(0.34509805, 0.2509804, 0.2, 1)
-
-[node name="guatai5" type="StaticBody2D" parent="." unique_id=839278391]
-position = Vector2(742, 51)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guatai5" unique_id=528583041]
-position = Vector2(58, 104)
-shape = SubResource("RectangleShape2D_yautc")
-
-[node name="ColorRect" type="ColorRect" parent="guatai5/CollisionShape2D" unique_id=1222961304]
-offset_left = -43.0
-offset_top = -2.0
-offset_right = 43.0
-offset_bottom = 2.0
-color = Color(0.34509805, 0.2509804, 0.2, 1)
-
-[node name="guatai6" type="StaticBody2D" parent="." unique_id=370975366]
-position = Vector2(856, 21)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guatai6" unique_id=1029214633]
-position = Vector2(58, 104)
-shape = SubResource("RectangleShape2D_yautc")
-
-[node name="ColorRect" type="ColorRect" parent="guatai6/CollisionShape2D" unique_id=1373003468]
-offset_left = -43.0
-offset_top = -2.0
-offset_right = 43.0
-offset_bottom = 2.0
-color = Color(0.34509805, 0.2509804, 0.2, 1)
-
-[node name="guatai7" type="StaticBody2D" parent="." unique_id=1254305969]
-position = Vector2(963, -17)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="guatai7" unique_id=1464832319]
-position = Vector2(58, 104)
-shape = SubResource("RectangleShape2D_yautc")
-
-[node name="ColorRect" type="ColorRect" parent="guatai7/CollisionShape2D" unique_id=365345952]
-offset_left = -43.0
-offset_top = -2.0
-offset_right = 43.0
-offset_bottom = 2.0
-color = Color(0.34509805, 0.2509804, 0.2, 1)
+[node name="HangingPlatform5" parent="ceshi/qiangbi/HangingPlatform2/qiangbi/qiangbi" unique_id=2133178605 instance=ExtResource("3_48ne7")]
+position = Vector2(523, -26)
 
 [node name="Player" parent="." unique_id=1811321606 instance=ExtResource("1_jbqir")]
 position = Vector2(145, 9)
